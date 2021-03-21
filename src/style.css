@@ -1,3 +1,146 @@
+div.container {
+  max-width: 650px;
+  background-color: #fff2c2;
+  padding: 25px;
+  margin: 25px auto 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444;
+}
+
+div.weatherTemp {
+  min-width: 400px;
+}
+
+div.footer {
+  max-width: 650px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(129, 129, 129);
+  margin: 5px auto 25px;
+}
+
 h1 {
-  color: blue;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px;
+  font-weight: 700;
+  letter-spacing: 10px;
+}
+
+h2 {
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+}
+
+h4 {
+  font-weight: 700;
+  letter-spacing: 5px;
+  font-size: 1em;
+  padding: 0;
+}
+
+h5 {
+  font-weight: 600;
+}
+
+h5,
+h6 {
+  font-size: 1em;
+  letter-spacing: 5px;
+  padding: 0;
+  margin: 0;
+}
+
+h7 {
+  font-size: 2.5em;
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.ZAXZ {
+  padding: 20px 10px;
+}
+
+input.form-control {
+  width: 100%;
+  letter-spacing: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  text-align: center;
+  width: 100%;
+  letter-spacing: 2px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  top: 0px;
+  background-color: rosybrown;
+  border-color: pink;
+}
+
+.btn-current {
+  text-align: center;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  top: 0px;
+}
+
+.weatherTemp {
+  margin: auto;
+  max-width: 500px;
+}
+
+#weekdayTemp {
+  padding-bottom: 20px;
+}
+#input {
+  text-transform: uppercase;
+}
+
+#smFar {
+  padding-top: 10px;
+  font-size: 0.1em;
+  text-decoration: none;
+  vertical-align: text-top;
+  font-weight: bold;
+  margin-left: -10%;
+}
+
+#mainCols {
+  position: relative;
+  left: 20px;
+}
+
+#humWind {
+  color: #7f7f7f;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
+}
+
+#city,
+#date {
+  padding: 10px;
+  text-transform: uppercase;
 }
