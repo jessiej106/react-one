@@ -37,6 +37,10 @@ function displayWeatherCondition(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
    
+  fahrenheitTemperature = response.data.main.temp;
+  
+ 
+
     //FeatureIcon
    let iconElement = document.querySelector("#icon");
     iconElement.setAttribute(
@@ -44,7 +48,10 @@ function displayWeatherCondition(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
     iconElement.setAttribute("alt", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
 }
+
+
 function searchCity(city) {
   let apiKey = "6323ca44b3719afd2bc6c4253f5cc13c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
@@ -72,14 +79,24 @@ function currentLocation(event) {
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  // Remove Metric Link
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
+  let celsiusTemp = (fahrenheitTemperature - 32) * (5 / 9);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+   //Remove Metric Link
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
+//(32°F − 32) × 5/9 = 0°C
+
+
 //Feature#1
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
@@ -90,8 +107,12 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", find);
 
 //Bonus
+
+let fahrenheitTemperature = null;
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
